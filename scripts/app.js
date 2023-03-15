@@ -41,6 +41,7 @@ const screenController = () => {
       cell.classList.remove('no-hover')
       cell.id = undefined
     })
+    resultText.className = 'result__text'
   }
 
   const showNextSection = (section) => {
@@ -59,7 +60,6 @@ const screenController = () => {
   }
 
   const checkForWin = () => {
-    resultText.className = 'result__text'
     if (choices[0] === choices[1] && choices[1] === choices[2]) {
       if (choices[0] === userIcon) {
         resultText.textContent = 'you win!'
@@ -132,6 +132,10 @@ const screenController = () => {
         resultText.classList.add('loss')
       }
       setTimeout(() => hideCurrentSection(playGround), 500)
+    } else if (choices.filter((el) => typeof (el) === 'number').length === 0) {
+      resultText.textContent = 'it is a  draw :/'
+      resultText.classList.add('draw')
+      setTimeout(() => hideCurrentSection(playGround), 500)
     }
   }
 
@@ -167,7 +171,9 @@ const screenController = () => {
       again.removeEventListener('click', changeCellState)
       again.classList.add('no-hover')
     })
-    setTimeout(computersMove, 1000)
+    if (choices.filter((el) => typeof (el) === 'number').length > 1) {
+      setTimeout(computersMove, 1000)
+    }
   }
 
   playBtn.addEventListener('click', () => hideCurrentSection(greeting))

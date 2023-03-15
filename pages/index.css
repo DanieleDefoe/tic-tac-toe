@@ -214,6 +214,10 @@
   transition: opacity .3s ease;
 }
 
+.draw {
+  color: rgb(200, 200, 200);
+}
+
 .victory {
   color: green;
 }
