@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="great tic tac toe game built as a project in The Odin Project curriculum">
+    <meta name="keywords" content="tic tac toe, game, the odin project">
+    <meta name="author" content="Abuzar Mamedov">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="./pages/index.css">
+    <link rel="shortcut icon" href="./images/favicon.svg" type="image/x-icon">
+    <script src="./scripts/app.js" defer></script>
+  </head>
+  <body class="page">
+
+    <header class="header">
+      <h1 class="header__title">tic tac toe game</h1>
+    </header>
+
+    <section class="greeting">
+      <button type="button" class="greeting__play">play</button>
+    </section>
+
+    <section class="options hidden">
+      <h2 class="options__title">choose your warrior</h2>
+      <div class="options__wrapper">
+        <button class="option" id="cross">
+        </button>
+        <button class="option" id="zero">
+        </button>
+      </div>
+    </section>
+
+    <section class="playground hidden">
+      <button type="button" class="greeting__play playground__button" disabled>restart</button>
+      <div class="playground__grid">
+        <button class="playground__grid-cell option"></button>
+        <button class="playground__grid-cell option"></button>
+        <button class="playground__grid-cell option"></button>
+        <button class="playground__grid-cell option"></button>
+        <button class="playground__grid-cell option"></button>
+        <button class="playground__grid-cell option"></button>
+        <button class="playground__grid-cell option"></button>
+        <button class="playground__grid-cell option"></button>
+        <button class="playground__grid-cell option"></button>
+      </div>
+    </section>
+
+    <section class="result hidden">
+      <h3 class="result__text"></h3>
+      <button class="result__reset greeting__play" type="button">play again</button>
+      <button type="button" class="result__exit"></button>
+    </section>
+
+  </body>
+</html>
